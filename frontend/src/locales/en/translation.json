@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "test": "test oluyor en"
+  },
+  "navbar": {
+    "home_page": "Home Page",
+    "about": "About Me",
+    "contact": "Contact Me"
+  },
+  "notfound_page": {
+    "not_found": "404: Page Not Found",
+    "return_to_home": "Return to Home Page"
+  }
+}

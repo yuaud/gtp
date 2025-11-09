@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "test": "test oluyor tr"
+  },
+  "navbar": {
+    "home_page": "Ana Sayfa",
+    "about": "Hakkımda",
+    "contact": "Bana Ulaşın"
+  },
+  "notfound_page": {
+    "not_found": "404: Sayfa Bulunamadı",
+    "return_to_home": "Ana Sayfaya Dön"
+  }
+}

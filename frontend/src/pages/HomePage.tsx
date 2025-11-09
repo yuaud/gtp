@@ -2,8 +2,8 @@
 
 const HomePage = () => {
   return (
-  <div className="w-full min-h-screen bg-gray-800">
-    <p className="text-white">Home Page</p>
+  <div className="w-full min-h-screen bg-bg">
+    <p className="text-text">Home Page</p>
   </div>
   );
 };

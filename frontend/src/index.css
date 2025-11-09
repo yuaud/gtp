@@ -1,1 +1,40 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--background);  
+  --color-surface: var(--surface);     
+  --color-text: var(--text);       
+  --color-text-muted: var(--text-muted);    
+  --color-accent: var(--color-accent); 
+  --color-button-bg: var(--button-bg);
+  --color-button-text: var(--button-text);
+  --color-button-hover: var(--button-hover);
+}
+
+:root {
+  --background: oklch(0.98 0.02 250);
+  --surface: oklch(0.90 0.02 250);
+  --text: oklch(0.10 0.02 250);
+  --text-muted: oklch(0.45 0.02 250);
+  --color-accent: oklch(47.645% 0.12614 247.443);
+  --button-bg: oklch(0.75 0.08 250);
+  --button-text: oklch(0.15 0.02 250);
+  --button-hover: oklch(0.70 0.10 250);
+}
+
+.dark {
+  --background: oklch(0.10 0.01 250);  /* En koyu ton → sayfa arka planı. Tüm sayfanın genel arka planı. */ 
+  --surface: oklch(0.18 0.02 250);     /* İkincil arka plan / kart zemini. İçerik kutuları veya navbar arka planı.*/
+  --text: oklch(0.90 0.02 260);       /* Metin / ikon rengi. Genel yazı rengi.*/
+  --text-muted: oklch(0.65 0.02 260);     /* Vurgu rengi (buton, link, highlight). Etkileşimli öğelerde kontrast renk. */
+  --color-accent: oklch(0.70 0.14 220);    /* Uyarı / dikkat rengi. Dikkat çekici mesajlarda.*/
+  --button-bg: oklch(0.35 0.10 250);     
+  --button-text: oklch(0.92 0.02 260);   
+  --button-hover: oklch(0.45 0.12 250); 
+}
+
+/* Arka plan (neredeyse siyah) */
+/* Kart veya navbar zemini */
+/* Ana metin (yüksek kontrast beyaz) */
+/* İkincil metin (gri ton) */
+/* Vurgu (mavi) */

@@ -1,0 +1,12 @@
+@rootURL = http://localhost:5141
+
+GET {{rootURL}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{rootURL}}/api/maincategories
+Accept: application/json
+
+###
+GET {{rootURL}}/api/maincategories/2
+Accept: application/json

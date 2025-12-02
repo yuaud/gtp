@@ -9,10 +9,12 @@ namespace backend.Services
     public class CategoryService : ICategoryService
     {
         private readonly AppDbContext _context;
+        private readonly ILogger<CategoryService> _logger;
 
-        public CategoryService(AppDbContext context)
+        public CategoryService(AppDbContext context, ILogger<CategoryService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()

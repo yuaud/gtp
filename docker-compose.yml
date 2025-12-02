@@ -1,0 +1,16 @@
+services:
+  db_postgres:
+    image: postgres
+    container_name: gtp_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=gtpadmin
+      - POSTGRES_PASSWORD=gtpadminpassword
+      - POSTGRES_DB=gtp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

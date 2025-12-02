@@ -1,0 +1,371 @@
+2025-12-01 00:59:44.470 +03:00 [INF] Now listening on: https://localhost:7095
+2025-12-01 00:59:44.512 +03:00 [INF] Now listening on: http://localhost:5141
+2025-12-01 00:59:44.578 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-01 00:59:44.580 +03:00 [INF] Hosting environment: Development
+2025-12-01 00:59:44.582 +03:00 [INF] Content root path: C:\Users\Yusuf\Documents\gtp\backend
+2025-12-01 00:59:45.468 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__taskName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."LastRunUtc", s."TaskName"
+FROM "ScheduledTaskLogs" AS s
+WHERE s."TaskName" = @__taskName_0
+LIMIT 1
+2025-12-01 01:00:57.718 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Category - null null
+2025-12-01 01:00:57.718 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Category - null null
+2025-12-01 01:00:57.789 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:00:57.790 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:00:57.797 +03:00 [INF] Incoming request: GET /api/Category
+2025-12-01 01:00:57.797 +03:00 [INF] Incoming request: GET /api/Category
+2025-12-01 01:00:57.800 +03:00 [INF] Executing endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:00:57.801 +03:00 [INF] Executing endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:00:57.821 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.CategoryDto]]] GetCategories() on controller backend.Controllers.CategoryController (backend).
+2025-12-01 01:00:57.821 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.CategoryDto]]] GetCategories() on controller backend.Controllers.CategoryController (backend).
+2025-12-01 01:00:57.893 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Category" AS c
+2025-12-01 01:00:57.899 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Category" AS c
+2025-12-01 01:00:57.905 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.CategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:00:57.905 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.CategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:00:57.920 +03:00 [INF] Executed action backend.Controllers.CategoryController.GetCategories (backend) in 90.2352ms
+2025-12-01 01:00:57.920 +03:00 [INF] Executed action backend.Controllers.CategoryController.GetCategories (backend) in 93.3211ms
+2025-12-01 01:00:57.925 +03:00 [INF] Executed endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:00:57.927 +03:00 [INF] Executed endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:00:57.928 +03:00 [INF] Response status: 200
+2025-12-01 01:00:57.930 +03:00 [INF] Response status: 200
+2025-12-01 01:00:57.939 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Category - 200 null application/json; charset=utf-8 229.8448ms
+2025-12-01 01:00:57.939 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Category - 200 null application/json; charset=utf-8 229.8365ms
+2025-12-01 01:00:57.941 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Subcategory - null null
+2025-12-01 01:00:57.941 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Subcategory - null null
+2025-12-01 01:00:57.955 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:00:57.958 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:00:57.959 +03:00 [INF] Incoming request: GET /api/Subcategory
+2025-12-01 01:00:57.961 +03:00 [INF] Incoming request: GET /api/Subcategory
+2025-12-01 01:00:57.962 +03:00 [INF] Executing endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:00:57.964 +03:00 [INF] Executing endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:00:57.969 +03:00 [INF] Route matched with {action = "GetSubcategories", controller = "Subcategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.SubcategoryDto]]] GetSubcategories() on controller backend.Controllers.SubcategoryController (backend).
+2025-12-01 01:00:57.970 +03:00 [INF] Route matched with {action = "GetSubcategories", controller = "Subcategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.SubcategoryDto]]] GetSubcategories() on controller backend.Controllers.SubcategoryController (backend).
+2025-12-01 01:00:58.081 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."Name", s."Code", s."Category_id" AS "CategoryId", c."Name" AS "CategoryName"
+FROM "Subcategory" AS s
+INNER JOIN "Category" AS c ON s."Category_id" = c."Id"
+2025-12-01 01:00:58.081 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."Name", s."Code", s."Category_id" AS "CategoryId", c."Name" AS "CategoryName"
+FROM "Subcategory" AS s
+INNER JOIN "Category" AS c ON s."Category_id" = c."Id"
+2025-12-01 01:00:58.088 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.SubcategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:00:58.096 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.SubcategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:00:58.103 +03:00 [INF] Executed action backend.Controllers.SubcategoryController.GetSubcategories (backend) in 126.2359ms
+2025-12-01 01:00:58.108 +03:00 [INF] Executed action backend.Controllers.SubcategoryController.GetSubcategories (backend) in 135.2768ms
+2025-12-01 01:00:58.112 +03:00 [INF] Executed endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:00:58.115 +03:00 [INF] Executed endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:00:58.119 +03:00 [INF] Response status: 200
+2025-12-01 01:00:58.123 +03:00 [INF] Response status: 200
+2025-12-01 01:00:58.126 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Subcategory - 200 null application/json; charset=utf-8 184.5772ms
+2025-12-01 01:00:58.128 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Subcategory - 200 null application/json; charset=utf-8 187.1434ms
+2025-12-01 01:10:28.639 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Category - null null
+2025-12-01 01:10:28.644 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:10:28.645 +03:00 [INF] Incoming request: GET /api/Category
+2025-12-01 01:10:28.647 +03:00 [INF] Executing endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:10:28.649 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.CategoryDto]]] GetCategories() on controller backend.Controllers.CategoryController (backend).
+2025-12-01 01:10:28.660 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Category - null null
+2025-12-01 01:10:28.665 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:10:28.666 +03:00 [INF] Incoming request: GET /api/Category
+2025-12-01 01:10:28.668 +03:00 [INF] Executing endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:10:28.671 +03:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.CategoryDto]]] GetCategories() on controller backend.Controllers.CategoryController (backend).
+2025-12-01 01:10:28.698 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Category" AS c
+2025-12-01 01:10:28.698 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name"
+FROM "Category" AS c
+2025-12-01 01:10:28.704 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.CategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:10:28.709 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.CategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:10:28.712 +03:00 [INF] Executed action backend.Controllers.CategoryController.GetCategories (backend) in 59.4149ms
+2025-12-01 01:10:28.721 +03:00 [INF] Executed action backend.Controllers.CategoryController.GetCategories (backend) in 43.6541ms
+2025-12-01 01:10:28.724 +03:00 [INF] Executed endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:10:28.727 +03:00 [INF] Executed endpoint 'backend.Controllers.CategoryController.GetCategories (backend)'
+2025-12-01 01:10:28.729 +03:00 [INF] Response status: 200
+2025-12-01 01:10:28.731 +03:00 [INF] Response status: 200
+2025-12-01 01:10:28.733 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Category - 200 null application/json; charset=utf-8 94.0763ms
+2025-12-01 01:10:28.737 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Category - 200 null application/json; charset=utf-8 77.3699ms
+2025-12-01 01:10:28.740 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Subcategory - null null
+2025-12-01 01:10:28.749 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Subcategory - null null
+2025-12-01 01:10:28.762 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:10:28.769 +03:00 [INF] CORS policy execution successful.
+2025-12-01 01:10:28.771 +03:00 [INF] Incoming request: GET /api/Subcategory
+2025-12-01 01:10:28.773 +03:00 [INF] Incoming request: GET /api/Subcategory
+2025-12-01 01:10:28.775 +03:00 [INF] Executing endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:10:28.777 +03:00 [INF] Executing endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:10:28.782 +03:00 [INF] Route matched with {action = "GetSubcategories", controller = "Subcategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.SubcategoryDto]]] GetSubcategories() on controller backend.Controllers.SubcategoryController (backend).
+2025-12-01 01:10:28.785 +03:00 [INF] Route matched with {action = "GetSubcategories", controller = "Subcategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[backend.DTOs.SubcategoryDto]]] GetSubcategories() on controller backend.Controllers.SubcategoryController (backend).
+2025-12-01 01:10:28.795 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."Name", s."Code", s."Category_id" AS "CategoryId", c."Name" AS "CategoryName"
+FROM "Subcategory" AS s
+INNER JOIN "Category" AS c ON s."Category_id" = c."Id"
+2025-12-01 01:10:28.802 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."Name", s."Code", s."Category_id" AS "CategoryId", c."Name" AS "CategoryName"
+FROM "Subcategory" AS s
+INNER JOIN "Category" AS c ON s."Category_id" = c."Id"
+2025-12-01 01:10:28.803 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.SubcategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:10:28.808 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[backend.DTOs.SubcategoryDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 01:10:28.813 +03:00 [INF] Executed action backend.Controllers.SubcategoryController.GetSubcategories (backend) in 23.3877ms
+2025-12-01 01:10:28.817 +03:00 [INF] Executed action backend.Controllers.SubcategoryController.GetSubcategories (backend) in 19.885ms
+2025-12-01 01:10:28.819 +03:00 [INF] Executed endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:10:28.822 +03:00 [INF] Executed endpoint 'backend.Controllers.SubcategoryController.GetSubcategories (backend)'
+2025-12-01 01:10:28.824 +03:00 [INF] Response status: 200
+2025-12-01 01:10:28.826 +03:00 [INF] Response status: 200
+2025-12-01 01:10:28.831 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Subcategory - 200 null application/json; charset=utf-8 91.3292ms
+2025-12-01 01:10:28.833 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Subcategory - 200 null application/json; charset=utf-8 84.3262ms
+2025-12-01 22:49:23.892 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-01 22:49:24.098 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-12-01 22:49:24.109 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-01 22:49:24.113 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-12-01 22:49:24.118 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-01 22:49:24.129 +03:00 [INF] Applying migration '20251201194912_DataToPriceANDSubcategory'.
+2025-12-01 22:49:24.154 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Prices" ALTER COLUMN "SavedAtUtc" DROP NOT NULL;
+2025-12-01 22:49:24.159 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Prices" ALTER COLUMN "API_LastUpdatedAtUtc" DROP NOT NULL;
+2025-12-01 22:49:24.168 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (1, 'Sun, 30 Nov 2025 00:00:01 +0000', 'USD', 0.863, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'EUR');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (2, 'Sun, 30 Nov 2025 00:00:01 +0000', 'USD', 42.5054, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'TRY');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (3, 'Sun, 30 Nov 2025 00:00:01 +0000', 'USD', 77.73, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'RUB');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (4, 'Sun, 30 Nov 2025 00:00:01 +0000', 'USD', 41.98, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'UAH');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (5, 'Sun, 30 Nov 2025 00:00:01 +0000', 'EUR', 1.1588, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'USD');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (6, 'Sun, 30 Nov 2025 00:00:01 +0000', 'EUR', 49.2618, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'TRY');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (7, 'Sun, 30 Nov 2025 00:00:01 +0000', 'EUR', 89.88, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'RUB');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (8, 'Sun, 30 Nov 2025 00:00:01 +0000', 'EUR', 48.68, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'UAH');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (9, 'Sun, 30 Nov 2025 00:00:01 +0000', 'TRY', 0.02353, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'USD');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (10, 'Sun, 30 Nov 2025 00:00:01 +0000', 'TRY', 0.02029, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'EUR');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (11, 'Sun, 30 Nov 2025 00:00:01 +0000', 'TRY', 1.825, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'RUB');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (12, 'Sun, 30 Nov 2025 00:00:01 +0000', 'TRY', 0.9885, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'UAH');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (13, 'Sun, 30 Nov 2025 00:00:01 +0000', 'RUB', 0.0129, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'USD');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (14, 'Sun, 30 Nov 2025 00:00:01 +0000', 'RUB', 0.01113, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'EUR');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (15, 'Sun, 30 Nov 2025 00:00:01 +0000', 'RUB', 0.548, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'TRY');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (16, 'Sun, 30 Nov 2025 00:00:01 +0000', 'RUB', 0.5417, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'UAH');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (17, 'Sun, 30 Nov 2025 00:00:01 +0000', 'UAH', 0.02382, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'USD');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (18, 'Sun, 30 Nov 2025 00:00:01 +0000', 'UAH', 0.02054, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'EUR');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (19, 'Sun, 30 Nov 2025 00:00:01 +0000', 'UAH', 1.012, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'TRY');
+INSERT INTO "Prices" ("Id", "API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (20, 'Sun, 30 Nov 2025 00:00:01 +0000', 'UAH', 1.846, TIMESTAMPTZ '2025-11-30T21:15:31.849Z', 'RUB');
+2025-12-01 22:49:24.176 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Subcategory" ("Id", "Category_id", "Code", "Name")
+VALUES (10, 1, 'UAH', 'Ukrainian Hryvnia');
+INSERT INTO "Subcategory" ("Id", "Category_id", "Code", "Name")
+VALUES (11, 1, 'RUB', 'Russian Ruble');
+2025-12-01 22:49:24.188 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT setval(
+    pg_get_serial_sequence('"Prices"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "Prices") + 1,
+        nextval(pg_get_serial_sequence('"Prices"', 'Id'))),
+    false);
+SELECT setval(
+    pg_get_serial_sequence('"Subcategory"', 'Id'),
+    GREATEST(
+        (SELECT MAX("Id") FROM "Subcategory") + 1,
+        nextval(pg_get_serial_sequence('"Subcategory"', 'Id'))),
+    false);
+2025-12-01 22:49:24.193 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20251201194912_DataToPriceANDSubcategory', '9.0.0');
+2025-12-01 22:52:42.492 +03:00 [INF] Now listening on: https://localhost:7095
+2025-12-01 22:52:42.530 +03:00 [INF] Now listening on: http://localhost:5141
+2025-12-01 22:52:42.598 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-01 22:52:42.601 +03:00 [INF] Hosting environment: Development
+2025-12-01 22:52:42.603 +03:00 [INF] Content root path: C:\Users\Yusuf\Documents\gtp\backend
+2025-12-01 22:52:43.273 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/exchange/USD/TRY - null null
+2025-12-01 22:52:43.401 +03:00 [INF] Incoming request: GET /api/exchange/USD/TRY
+2025-12-01 22:52:43.406 +03:00 [INF] Executing endpoint 'backend.Controllers.ExchangeController.GetRate (backend)'
+2025-12-01 22:52:43.448 +03:00 [INF] Route matched with {action = "GetRate", controller = "Exchange"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRate(System.String, System.String) on controller backend.Controllers.ExchangeController (backend).
+2025-12-01 22:52:43.510 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:43.516 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:43.638 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__taskName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT s."Id", s."LastRunUtc", s."TaskName"
+FROM "ScheduledTaskLogs" AS s
+WHERE s."TaskName" = @__taskName_0
+LIMIT 1
+2025-12-01 22:52:43.716 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:43.718 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:43.752 +03:00 [INF] Received HTTP response headers after 232.5145ms - 200
+2025-12-01 22:52:43.757 +03:00 [INF] End processing HTTP request after 249.7034ms - 200
+2025-12-01 22:52:43.793 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[backend.DTOs.ExchangeResponseDto, backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-01 22:52:43.811 +03:00 [INF] Executed action backend.Controllers.ExchangeController.GetRate (backend) in 356.6104ms
+2025-12-01 22:52:43.812 +03:00 [INF] Received HTTP response headers after 91.5795ms - 200
+2025-12-01 22:52:43.816 +03:00 [INF] Executed endpoint 'backend.Controllers.ExchangeController.GetRate (backend)'
+2025-12-01 22:52:43.817 +03:00 [INF] End processing HTTP request after 100.9564ms - 200
+2025-12-01 22:52:43.818 +03:00 [INF] Response status: 200
+2025-12-01 22:52:43.844 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/exchange/USD/TRY - 200 null application/json; charset=utf-8 584.0899ms
+2025-12-01 22:52:43.898 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:43.902 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:44.112 +03:00 [INF] Received HTTP response headers after 205.8154ms - 200
+2025-12-01 22:52:44.115 +03:00 [INF] End processing HTTP request after 217.6763ms - 200
+2025-12-01 22:52:44.121 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:44.123 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:44.202 +03:00 [INF] Received HTTP response headers after 75.9668ms - 200
+2025-12-01 22:52:44.205 +03:00 [INF] End processing HTTP request after 83.8302ms - 200
+2025-12-01 22:52:44.208 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:44.211 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/USD
+2025-12-01 22:52:44.289 +03:00 [INF] Received HTTP response headers after 74.3067ms - 200
+2025-12-01 22:52:44.291 +03:00 [INF] End processing HTTP request after 83.6894ms - 200
+2025-12-01 22:52:44.295 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.297 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.372 +03:00 [INF] Received HTTP response headers after 72.8624ms - 200
+2025-12-01 22:52:44.374 +03:00 [INF] End processing HTTP request after 79.5462ms - 200
+2025-12-01 22:52:44.377 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.380 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.457 +03:00 [INF] Received HTTP response headers after 75.673ms - 200
+2025-12-01 22:52:44.460 +03:00 [INF] End processing HTTP request after 82.9539ms - 200
+2025-12-01 22:52:44.463 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.465 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.540 +03:00 [INF] Received HTTP response headers after 73.7599ms - 200
+2025-12-01 22:52:44.543 +03:00 [INF] End processing HTTP request after 80.0209ms - 200
+2025-12-01 22:52:44.546 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.547 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/EUR
+2025-12-01 22:52:44.624 +03:00 [INF] Received HTTP response headers after 74.5097ms - 200
+2025-12-01 22:52:44.626 +03:00 [INF] End processing HTTP request after 80.4433ms - 200
+2025-12-01 22:52:44.629 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.630 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.709 +03:00 [INF] Received HTTP response headers after 76.9859ms - 200
+2025-12-01 22:52:44.712 +03:00 [INF] End processing HTTP request after 83.6371ms - 200
+2025-12-01 22:52:44.715 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.717 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.797 +03:00 [INF] Received HTTP response headers after 77.5262ms - 200
+2025-12-01 22:52:44.800 +03:00 [INF] End processing HTTP request after 85.2411ms - 200
+2025-12-01 22:52:44.802 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.804 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.880 +03:00 [INF] Received HTTP response headers after 74.2536ms - 200
+2025-12-01 22:52:44.884 +03:00 [INF] End processing HTTP request after 81.7693ms - 200
+2025-12-01 22:52:44.887 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.888 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/TRY
+2025-12-01 22:52:44.974 +03:00 [INF] Received HTTP response headers after 83.3239ms - 200
+2025-12-01 22:52:44.977 +03:00 [INF] End processing HTTP request after 89.9219ms - 200
+2025-12-01 22:52:44.979 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:44.981 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.070 +03:00 [INF] Received HTTP response headers after 86.8951ms - 200
+2025-12-01 22:52:45.073 +03:00 [INF] End processing HTTP request after 94.0253ms - 200
+2025-12-01 22:52:45.076 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.077 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.167 +03:00 [INF] Received HTTP response headers after 87.4327ms - 200
+2025-12-01 22:52:45.169 +03:00 [INF] End processing HTTP request after 93.6366ms - 200
+2025-12-01 22:52:45.172 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.174 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.247 +03:00 [INF] Received HTTP response headers after 71.6105ms - 200
+2025-12-01 22:52:45.250 +03:00 [INF] End processing HTTP request after 78.056ms - 200
+2025-12-01 22:52:45.255 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.256 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/RUB
+2025-12-01 22:52:45.338 +03:00 [INF] Received HTTP response headers after 79.2399ms - 200
+2025-12-01 22:52:45.341 +03:00 [INF] End processing HTTP request after 86.108ms - 200
+2025-12-01 22:52:45.343 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.345 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.421 +03:00 [INF] Received HTTP response headers after 74.0741ms - 200
+2025-12-01 22:52:45.425 +03:00 [INF] End processing HTTP request after 81.5426ms - 200
+2025-12-01 22:52:45.427 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.428 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.499 +03:00 [INF] Received HTTP response headers after 69.089ms - 200
+2025-12-01 22:52:45.502 +03:00 [INF] End processing HTTP request after 74.7294ms - 200
+2025-12-01 22:52:45.505 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.507 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.587 +03:00 [INF] Received HTTP response headers after 77.1382ms - 200
+2025-12-01 22:52:45.589 +03:00 [INF] End processing HTTP request after 84.3913ms - 200
+2025-12-01 22:52:45.592 +03:00 [INF] Start processing HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.595 +03:00 [INF] Sending HTTP request GET https://v6.exchangerate-api.com/v6/806c93a416f10b5b19c756b0/latest/UAH
+2025-12-01 22:52:45.676 +03:00 [INF] Received HTTP response headers after 78.8301ms - 200
+2025-12-01 22:52:45.678 +03:00 [INF] End processing HTTP request after 85.7247ms - 200
+2025-12-01 22:52:45.681 +03:00 [INF] Prices Table Updated
+2025-12-01 22:52:45.767 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?', @p1='?', @p2='?' (DbType = Decimal), @p3='?' (DbType = DateTime), @p4='?', @p5='?', @p6='?', @p7='?' (DbType = Decimal), @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?' (DbType = Decimal), @p13='?' (DbType = DateTime), @p14='?', @p15='?', @p16='?', @p17='?' (DbType = Decimal), @p18='?' (DbType = DateTime), @p19='?', @p20='?', @p21='?', @p22='?' (DbType = Decimal), @p23='?' (DbType = DateTime), @p24='?', @p25='?', @p26='?', @p27='?' (DbType = Decimal), @p28='?' (DbType = DateTime), @p29='?', @p30='?', @p31='?', @p32='?' (DbType = Decimal), @p33='?' (DbType = DateTime), @p34='?', @p35='?', @p36='?', @p37='?' (DbType = Decimal), @p38='?' (DbType = DateTime), @p39='?', @p40='?', @p41='?', @p42='?' (DbType = Decimal), @p43='?' (DbType = DateTime), @p44='?', @p45='?', @p46='?', @p47='?' (DbType = Decimal), @p48='?' (DbType = DateTime), @p49='?', @p50='?', @p51='?', @p52='?' (DbType = Decimal), @p53='?' (DbType = DateTime), @p54='?', @p55='?', @p56='?', @p57='?' (DbType = Decimal), @p58='?' (DbType = DateTime), @p59='?', @p60='?', @p61='?', @p62='?' (DbType = Decimal), @p63='?' (DbType = DateTime), @p64='?', @p65='?', @p66='?', @p67='?' (DbType = Decimal), @p68='?' (DbType = DateTime), @p69='?', @p70='?', @p71='?', @p72='?' (DbType = Decimal), @p73='?' (DbType = DateTime), @p74='?', @p75='?', @p76='?', @p77='?' (DbType = Decimal), @p78='?' (DbType = DateTime), @p79='?', @p80='?', @p81='?', @p82='?' (DbType = Decimal), @p83='?' (DbType = DateTime), @p84='?', @p85='?', @p86='?', @p87='?' (DbType = Decimal), @p88='?' (DbType = DateTime), @p89='?', @p90='?', @p91='?', @p92='?' (DbType = Decimal), @p93='?' (DbType = DateTime), @p94='?', @p95='?', @p96='?', @p97='?' (DbType = Decimal), @p98='?' (DbType = DateTime), @p99='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p10, @p11, @p12, @p13, @p14)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p15, @p16, @p17, @p18, @p19)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p20, @p21, @p22, @p23, @p24)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p25, @p26, @p27, @p28, @p29)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p30, @p31, @p32, @p33, @p34)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p35, @p36, @p37, @p38, @p39)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p40, @p41, @p42, @p43, @p44)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p45, @p46, @p47, @p48, @p49)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p50, @p51, @p52, @p53, @p54)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p55, @p56, @p57, @p58, @p59)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p60, @p61, @p62, @p63, @p64)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p65, @p66, @p67, @p68, @p69)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p70, @p71, @p72, @p73, @p74)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p75, @p76, @p77, @p78, @p79)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p80, @p81, @p82, @p83, @p84)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p85, @p86, @p87, @p88, @p89)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p90, @p91, @p92, @p93, @p94)
+RETURNING "Id";
+INSERT INTO "Prices" ("API_LastUpdatedAtUtc", "BaseCurrency", "Rate", "SavedAtUtc", "TargetCurrency")
+VALUES (@p95, @p96, @p97, @p98, @p99)
+RETURNING "Id";
+2025-12-01 22:52:45.817 +03:00 [INF] ScheduledTaskLogs Table Updated
+2025-12-01 22:52:45.830 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "ScheduledTaskLogs" SET "LastRunUtc" = @p0, "TaskName" = @p1
+WHERE "Id" = @p2;

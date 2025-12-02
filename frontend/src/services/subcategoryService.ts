@@ -9,7 +9,7 @@ export const getSubcategories = async (): Promise<Subcategory[]> => {
         const response = await axios.get(API_URL);
         return response.data as Subcategory[]; // JSON verisi
     } catch (err) {
-        console.error("Error fetching subcategories: ", err);
+        console.error("Error while fetching subcategories: ", err);
         return [];
     }
 };
@@ -19,7 +19,7 @@ export const getSubcategoryById = async (id: number) => {
         const response = await axios.get(`${API_URL}/${id}`);
         return response.data as Subcategory; // JSON verisi
     } catch (err){
-        console.error(`Error fetching subcategory ${id}: `, err);
+        console.error(`Error while fetching subcategory ${id}: `, err);
         return null;
     }
 };

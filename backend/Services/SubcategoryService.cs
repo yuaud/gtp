@@ -10,10 +10,12 @@ namespace backend.Services
     public class SubcategoryService : ISubcategoryService
     {
         private readonly AppDbContext _context;
+        private readonly ILogger<SubcategoryService> _logger;
 
-        public SubcategoryService(AppDbContext context)
+        public SubcategoryService(AppDbContext context, ILogger<SubcategoryService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task<IEnumerable<SubcategoryDto>> GetAllSubcategoriesAsync()
@@ -24,6 +26,7 @@ namespace backend.Services
                 {
                     Id = s.Id,
                     Name = s.Name,
+                    Code = s.Code,
                     CategoryId = s.Category_id,
                     CategoryName = s.Category.Name
                 })
@@ -38,6 +41,7 @@ namespace backend.Services
                 {
                     Id = s.Id,
                     Name = s.Name,
+                    Code = s.Code,
                     CategoryId = s.Category_id,
                     CategoryName = s.Category.Name
                 })

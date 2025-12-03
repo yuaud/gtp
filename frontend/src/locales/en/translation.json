@@ -38,6 +38,13 @@
     },
     "today": "Today",
     "yesterday": "Yesterday",
+    "from_yesterday_to_today": "From Yesterday to Today",
+    "change": "Change",
+    "price_state": {
+      "increase": "Increase",
+      "decrease": "Decrease",
+      "same": "Same"
+    },
     "to": "To",
     "date": "Date"
   }

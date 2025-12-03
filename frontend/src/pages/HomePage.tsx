@@ -10,6 +10,7 @@ import type { Price } from "../interfaces/Price";
 import PriceChart from "../components/charts/PriceChart";
 import { dayOptions } from "./options/DayOptions";
 import { useTranslation } from "react-i18next";
+import { ArrowDown, ArrowUp, Equal } from "lucide-react";
 
 const HomePage = () => {
   const {t, i18n} = useTranslation();
@@ -25,11 +26,22 @@ const HomePage = () => {
   const [selectedTargetCurrency, setSelectedTargetCurrency] = useState<Currency | null>(null);
 
   const [priceHistoryDays, setPriceHistoryDays] = useState<number>(7);
+  const [todaysPrice, setTodaysPrice] = useState<number>(0);
+  const [yesterdaysPrice, setYesterdaysPrice] = useState<number>(0);
+  const [change, setChange] = useState<number>(0);
 
   const today = new Date();
   const yesterday = new Date();
   yesterday.setDate(today.getDate() - 1);
   const [priceHistory, setPriceHistory] = useState<Price[]>([]);
+
+  function formatChange(value: number): string {
+  // 6 anlamlı basamağa yuvarla, (en fazla 6 basamak olacak)
+  const precise = value.toPrecision(6); 
+  // fazla sıfırları kırp
+  const trimmed = parseFloat(precise).toString();
+  return trimmed;
+}
 
 
   // Initialize Categories. categories ve selectedCategory set et
@@ -74,6 +86,9 @@ const HomePage = () => {
       try{
         const response = await getPriceHistory(selectedBaseCurrency.code, selectedTargetCurrency.code, priceHistoryDays);
         setPriceHistory(response);
+        setYesterdaysPrice(response.find((p) => p.date.getDate() === yesterday.getDate())?.rate ?? 0); 
+        setTodaysPrice(response.find((p) => p.date.getDate() === today.getDate())?.rate ?? 0); 
+        setChange((response.find((p) => p.date.getDate() === today.getDate())?.rate ?? 0) - (response.find((p) => p.date.getDate() === yesterday.getDate())?.rate ?? 0));
       } catch(err){
         console.error(`Error while fetching price history for ${selectedBaseCurrency}/${selectedTargetCurrency}: `, err);
       }
@@ -163,19 +178,51 @@ const HomePage = () => {
         ))}
       </select>
       </div>
+      <label className="flex justify-center items-center font-semibold text-accent">
+        {`${t(`homepage.subcategories.${selectedBaseCurrency?.code}`)} ${t("homepage.to")}: ${t(`homepage.subcategories.${selectedTargetCurrency?.code}`)}`}
+      </label>
       </PageCardLayout>
       {/* Today, Yesterday Prices */}
-      <PageCardLayout className="w-xl">
+      <PageCardLayout >
         <div className="flex flex-row justify-center gap-8">
-          <div className="flex flex-col bg-surface rounded-xl shadow-sm shadow-accent p-4 w-2/5 text-accent">
+          <div className="flex flex-col flex-nowrap bg-surface rounded-xl shadow-sm shadow-accent p-4 min-w-fit text-accent">
             <h1 className="font-bold mb-2">{t("homepage.yesterday")}</h1>
-            <label className="font-semibold">1 {selectedBaseCurrency?.code} = { priceHistory.find((p) => p.date.getDate() === yesterday.getDate())?.rate } {selectedTargetCurrency?.code}</label>
+            <label className="font-semibold">1 {selectedBaseCurrency?.code} = { yesterdaysPrice } {selectedTargetCurrency?.code}</label>
             {/* <label className="font-semibold">{t("homepage.date")}: {priceHistory.find((p) => p.date.getDate() === yesterday.getDate())?.date.toLocaleDateString("tr-TR")}</label> */}
           </div>
-          <div className="flex flex-col bg-surface rounded-xl shadow-sm shadow-accent p-4 w-2/5 text-accent">
+          <div className="flex flex-col flex-nowrap bg-surface rounded-xl shadow-sm shadow-accent p-4 min-w-fit text-accent">
             <h1 className="font-bold mb-2">{t("homepage.today")}</h1>
-            <label className="font-semibold">1 {selectedBaseCurrency?.code} = {priceHistory.find((p) => p.date.getDate() === today.getDate())?.rate} {selectedTargetCurrency?.code}</label>
+            <label className="font-semibold">1 {selectedBaseCurrency?.code} = { todaysPrice } {selectedTargetCurrency?.code}</label>
             {/* <label className="font-semibold">{t("homepage.date")}: {priceHistory.find((p) => p.date.getDate() === today.getDate())?.date.toLocaleDateString("tr-TR")}</label> */}
+          </div>
+          <div className={`flex flex-row flex-nowrap bg-surface rounded-xl p-4 min-w-fit shadow-sm text-accent ${
+              Math.sign(change) === 1 ? "shadow-green-500" : 
+              Math.sign(change) === -1 ? "shadow-red-500" : "shadow-gray-500"} ` 
+          }>
+            <div className="flex flex-col w-2/3 min-w-fit">
+              <h1 className="font-bold mb-2">{t("homepage.from_yesterday_to_today")}</h1>
+              <label className="font-semibold"> {t("homepage.change")}: {formatChange(change)} </label>
+            </div>
+            <div className="flex flex-col w-1/3 min-w-fit justify-center items-center ml-4">
+              {Math.sign(change) === 1 && ( 
+                <> 
+                  <ArrowUp className="text-green-500" size={48}/>
+                  <label className="font-semibold text-green-500">{t("homepage.price_state.increase")}</label> 
+                </>
+              )}
+              {Math.sign(change) === 0 && (
+                <>
+                  <Equal className="text-gray-500" size={48}/>
+                  <label className="font-semibold text-gray-500">{t("homepage.price_state.same")}</label>
+                </>
+              )}
+              {Math.sign(change) === -1 && ( 
+                <>
+                  <ArrowDown className="text-red-500" size={48}/>
+                  <label className="font-semibold text-red-500">{t("homepage.price_state.decrease")}</label>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </PageCardLayout>

@@ -38,6 +38,13 @@
     },
     "today": "Bugün",
     "yesterday": "Dün",
+    "from_yesterday_to_today": "Dünden Bugüne",
+    "change": "Değişim",
+    "price_state": {
+      "increase": "Artış",
+      "decrease": "Düşüş",
+      "same": "Aynı"
+    },
     "to": "Şuna Çevir",
     "date": "Tarih"
   }

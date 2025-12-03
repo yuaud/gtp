@@ -48,6 +48,9 @@ namespace backend.Services
 
             //var turkeyTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Turkey Standard Time");
             //var todayTurkey = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, turkeyTimeZone).Date;
+
+            /* API UTC + 0'da güncellendiği için UtcNow olarak alıyorum, tr-TR saati 3 saat ileride.
+             Yani TR saati ile 03:00 olduğunda today değişkeni bir sonraki güne geçecek if bloğu atlanacak. */
             var today = DateTime.UtcNow.Date;
             if (log != null && log.LastRunUtc.Date == today)
                 return; // bu task bugün zaten çalışmış

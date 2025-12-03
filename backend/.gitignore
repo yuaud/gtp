@@ -10,6 +10,7 @@ obj/
 
 # Visual Studio Code
 .vscode/
+.vs/
 
 # Rider
 .idea/
@@ -21,6 +22,7 @@ packages/
 
 # Logs
 *.log
+Logs/
 
 # DotNet publish folder
 publish/

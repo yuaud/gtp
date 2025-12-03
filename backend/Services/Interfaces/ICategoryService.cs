@@ -1,5 +1,4 @@
 ﻿using backend.DTOs;
-using backend.Models;
 
 namespace backend.Services.Interfaces
 {
@@ -7,5 +6,6 @@ namespace backend.Services.Interfaces
     {
         Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync();
         Task<CategoryDto?> GetCategoryById(int id);
+        Task<IEnumerable<SubcategoryDto>> GetSubcategoryByCategory(int category_id);
     }
 }

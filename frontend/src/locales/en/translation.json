@@ -10,5 +10,35 @@
   "notfound_page": {
     "not_found": "404: Page Not Found",
     "return_to_home": "Return to Home Page"
+  },
+  "homepage": {
+    "categories": {
+      "Currency": "Currency",
+      "Metals": "Metals",
+      "Crypto": "Crypto"
+    },
+    "subcategories": {
+      "EUR": "Euro",
+      "USD": "US Dollar",
+      "UAH": "Ukrainian Hryvnia",
+      "RUB": "Russian Ruble",
+      "TRY": "Turkish Lira",
+      "AU": "Gold",
+      "AG": "Silver",
+      "PT": "Platinum",
+      "BTC": "Bitcoin",
+      "ETH": "Ethereum",
+      "XRP": "Ripple"
+    },
+    "days": {
+      "1_day": "1 Day",
+      "3_days": "3 Days",
+      "7_days": "7 Days",
+      "30_days": "30 Days"
+    },
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "to": "To",
+    "date": "Date"
   }
 }

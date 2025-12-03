@@ -39,5 +39,29 @@ namespace backend.Services
                 })
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
+
+        public async Task<IEnumerable<SubcategoryDto>> GetSubcategoryByCategory(int category_id)
+        {
+            try
+            {
+                var response = await _context.Subcategories
+                    .Where(s => s.Category_id == category_id)
+                    .Select(s => new SubcategoryDto
+                    {
+                        Id = s.Id,
+                        Name = s.Name,
+                        Code = s.Code,
+                        CategoryId = s.Category_id,
+                        CategoryName = s.Category.Name
+                    })
+                    .ToListAsync();
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Subcategories, Category: {category_id} icin fetch edilirken hata.", category_id);
+                throw;
+            }
+        }
     }
 }

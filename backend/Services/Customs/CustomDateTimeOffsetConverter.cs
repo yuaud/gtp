@@ -8,12 +8,6 @@ namespace backend.Services.Customs
     {
         // API'den gelen string'in formatı
         private const string DateTimeFormat = "ddd, dd MMM yyyy HH:mm:ss zzzz";
-        private readonly ILogger<CustomDateTimeOffsetConverter> _logger;
-
-        public CustomDateTimeOffsetConverter(ILogger<CustomDateTimeOffsetConverter> logger)
-        {
-            _logger = logger;
-        }
 
         public override DateTimeOffset Read(
             ref Utf8JsonReader reader,
@@ -22,7 +16,6 @@ namespace backend.Services.Customs
         {
             if(reader.TokenType != JsonTokenType.String)
             {
-                _logger.LogError($"Beklenen token tipi String iken, {reader.TokenType} geldi.");
                 throw new JsonException($"Beklenen token tipi String iken, {reader.TokenType} geldi.");
             }
             string dateString = reader.GetString();
@@ -37,7 +30,6 @@ namespace backend.Services.Customs
             {
                 return parsedDate;
             }
-            _logger.LogError($"'{dateString}' formatında tarih ayrıştırılamadı.");
             throw new JsonException($"'{dateString}' formatında tarih ayrıştırılamadı.");
         }
 

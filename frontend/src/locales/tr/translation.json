@@ -10,5 +10,35 @@
   "notfound_page": {
     "not_found": "404: Sayfa Bulunamadı",
     "return_to_home": "Ana Sayfaya Dön"
+  },
+  "homepage": {
+    "categories": {
+      "Currency": "Döviz",
+      "Metals": "Metaller",
+      "Crypto": "Kripto"
+    },
+    "subcategories": {
+      "EUR": "Euro",
+      "USD": "Amerikan Doları",
+      "UAH": "Ukrayna Grivnası",
+      "RUB": "Rus Rublesi",
+      "TRY": "Türk Lirası",
+      "AU": "Altın",
+      "AG": "Gümüş",
+      "PT": "Platinyum",
+      "BTC": "Bitcoin",
+      "ETH": "Ethereum",
+      "XRP": "Ripple"
+    },
+    "days": {
+      "1_day": "1 Gün",
+      "3_days": "3 Gün",
+      "7_days": "7 Gün",
+      "30_days": "30 Gün"
+    },
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "to": "Şuna Çevir",
+    "date": "Tarih"
   }
 }

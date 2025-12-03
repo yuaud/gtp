@@ -1,5 +1,6 @@
 ﻿using backend.DTOs;
 using backend.Models;
+using backend.Services;
 using backend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,6 +31,13 @@ namespace backend.Controllers
             var category = await _categoryService.GetCategoryById(id);
             if (category == null) return NotFound();
             return Ok(category);
+        }
+
+        [HttpGet("{category_id}/subcategories")]
+        public async Task<ActionResult<IEnumerable<SubcategoryDto>>> GetSubcategoriesByCategory(int category_id)
+        {
+            var subcategoriesByCategory = await _categoryService.GetSubcategoryByCategory(category_id);
+            return Ok(subcategoriesByCategory);
         }
     }
 }

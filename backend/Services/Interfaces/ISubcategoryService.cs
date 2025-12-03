@@ -7,5 +7,6 @@ namespace backend.Services.Interfaces
     {
         Task<IEnumerable<SubcategoryDto>> GetAllSubcategoriesAsync();
         Task<SubcategoryDto?> GetSubcategoryById(int id);
+
     }
 }

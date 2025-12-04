@@ -1,15 +1,16 @@
-﻿using backend.Data;
+﻿
+using backend.Data;
 using backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Services
 {
-    public class ExchangeRateBackgroundService : BackgroundService
+    public class MetalPriceBackgroundService : BackgroundService
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ILogger<ExchangeRateBackgroundService> _logger;
+        private readonly ILogger<MetalPriceBackgroundService> _logger;
 
-        public ExchangeRateBackgroundService(IServiceProvider serviceProvider, ILogger<ExchangeRateBackgroundService> logger)
+        public MetalPriceBackgroundService(IServiceProvider serviceProvider, ILogger<MetalPriceBackgroundService> logger)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
@@ -23,9 +24,10 @@ namespace backend.Services
                 try
                 {
                     await RunIfNeeded(cancellationToken);
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
-                    _logger.LogError(ex, "ExchangeRate-API Daily Job Failed");
+                    _logger.LogError(ex, "MetalPrice-API Daily Job Failed");
                 }
                 // Her saat scheduled task'in bugün çalışıp çalışmadığını kontrol et
                 await Task.Delay(TimeSpan.FromHours(1), cancellationToken);
@@ -39,18 +41,13 @@ namespace backend.Services
             using var scope = _serviceProvider.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-            string taskName = "ExchangeRateDailyTask";
+            string taskName = "MetalPriceDailyTask";
 
             var log = await db.ScheduledTaskLogs
                 .Where(x => x.TaskName == taskName)
                 .OrderByDescending(x => x.LastRunUtc)
                 .FirstOrDefaultAsync(cancellationToken: cancellationToken);
 
-            //var turkeyTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Turkey Standard Time");
-            //var todayTurkey = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, turkeyTimeZone).Date;
-
-            /* API UTC + 0'da güncellendiği için UtcNow olarak alıyorum, tr-TR saati 3 saat ileride.
-             Yani TR saati ile 03:00 olduğunda today değişkeni bir sonraki güne geçecek if bloğu atlanacak. */
             var today = DateTime.UtcNow.Date;
             if (log != null && log.LastRunUtc.Date == today)
                 return; // bu task bugün zaten çalışmış
@@ -72,36 +69,41 @@ namespace backend.Services
         private async Task RunJob()
         {
             using var scope = _serviceProvider.CreateScope();
-            var exchangeService = scope.ServiceProvider.GetRequiredService<ExchangeRateService>();
+            var metalService = scope.ServiceProvider.GetRequiredService<MetalPriceService>();
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-            List<string?> currencies = await db.Subcategories
-                .Where(s => s.Category_id == 1)
+            List<string?> metals = await db.Subcategories
+                .Where(s => s.Category_id == 2)
                 .Select(s => s.Code)
                 .ToListAsync();
-            // Her bir currency için kendileri hariç(USD->USD Yasak) diğer currencylerle exchange rateleri
-            // USD->TRY, USD->EUR, USD->UAH, USD->RUB,
-            // TRY->USD, TRY->EUR, TRY->UAH, TRY->RUB,
-            foreach(var from in currencies)
-            {
-                foreach(var to in currencies)
-                {
-                    // kendi kendine(USD->USD, TRY->TRY) istek göndermesin
-                    if (from == to) continue;
+            string result = string.Join(",", metals);
+            var dto = await metalService.GetMetals(currencies: result);
 
-                    var dto = await exchangeService.GetRate(from, to);
-                    if (dto == null) continue;
-                    var price = new Price
-                    {
-                        BaseCurrency = from,
-                        TargetCurrency = to,
-                        Rate = dto.rate,
-                        SavedAtUtc = DateTimeOffset.UtcNow,
-                        API_LastUpdatedAtUtc = dto.time_last_update_utc
-                    };
-                    db.Prices.Add(price);
+            var price_metal = new Price_Metal();
+
+            // reflection
+            foreach(var metal in metals)
+            {
+                // 1) Metal (XAG, XAU, XPT)
+                if(dto.rates.TryGetValue(metal, out var value))
+                {
+                    var prop = typeof(Price_Metal).GetProperty(metal);
+                    if (prop != null)
+                        prop.SetValue(price_metal, value);
+                }
+                // 2) Base currency + metal (USDXAG, USDXAU, USDXPT)
+                var combinedKey = dto.base_curr + metal; // USD + XAG = USDXAG
+                if(dto.rates.TryGetValue(combinedKey, out var combinedValue))
+                {
+                    var combinedProp = typeof(Price_Metal).GetProperty(combinedKey);
+                    if (combinedProp != null)
+                        combinedProp.SetValue(price_metal, combinedValue);
                 }
             }
-            _logger.LogInformation("Prices Table Updated");
+            price_metal.Basecurrency = dto.base_curr;
+            price_metal.Saved_at = DateTime.UtcNow;
+            price_metal.API_LastUpdatedUtc = DateTimeOffset.FromUnixTimeSeconds(dto.timestamp);
+            _logger.LogInformation("Prices_Metal Table Updated");
+            db.Prices_Metal.Add(price_metal);
             await db.SaveChangesAsync();
         }
     }

@@ -36,9 +36,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 //Zamanlamali background exchangerate service
 builder.Services.AddHostedService<ExchangeRateBackgroundService>();
+builder.Services.AddHostedService<MetalPriceBackgroundService>();
 
 // Dependency Injection (DI)
 builder.Services.AddHttpClient<ExchangeRateService>();
+builder.Services.AddHttpClient<MetalPriceService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISubcategoryService, SubcategoryService>();
 builder.Services.AddScoped<IPriceService, PriceService>();

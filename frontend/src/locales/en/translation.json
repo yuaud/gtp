@@ -23,9 +23,9 @@
       "UAH": "Ukrainian Hryvnia",
       "RUB": "Russian Ruble",
       "TRY": "Turkish Lira",
-      "AU": "Gold",
-      "AG": "Silver",
-      "PT": "Platinum",
+      "XAU": "Gold",
+      "XAG": "Silver",
+      "XPT": "Platinum",
       "BTC": "Bitcoin",
       "ETH": "Ethereum",
       "XRP": "Ripple"
@@ -46,6 +46,10 @@
       "same": "Same"
     },
     "to": "To",
+    "date": "Date"
+  },
+  "chart": {
+    "price": "Price",
     "date": "Date"
   }
 }

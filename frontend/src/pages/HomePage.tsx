@@ -5,6 +5,7 @@ import type { Category } from "../interfaces/Category";
 import PageCardLayout from "../layout/PageCardLayout";
 import { useTranslation } from "react-i18next";
 import CurrencyComponent from "../components/CurrencyComponent";
+import MetalComponent from "../components/MetalComponent";
 
 
 const HomePage = () => {
@@ -12,6 +13,8 @@ const HomePage = () => {
 
   const [categories, setCategories] = useState<Category[]>([]);
   const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
+
+  const [currencies, setCurrencies] = useState<Subcategory[]>([]);
 
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState<Subcategory | null>(null);
@@ -25,6 +28,10 @@ const HomePage = () => {
       setCategories(categoriesData);
       // İlk category verisini selected olarak set et.
       setSelectedCategory(categoriesData.length > 0 ? categoriesData[0] : null);
+
+      // Metals ve Crypto kategorilerinde para birimi dönüşümü için componentlere prop olarak geçmek lazım.
+      const getCurrencies = await getSubcategoriesByCategory(1);
+      setCurrencies(getCurrencies);
     };
     fetchCategories();
   }, []);
@@ -95,6 +102,13 @@ const HomePage = () => {
        selectedSubcategory={selectedSubcategory}
        subcategories={subcategories} 
        />
+    )}
+    {selectedCategory?.id === 2 && (
+      <MetalComponent
+      selectedSubcategory={selectedSubcategory}
+      subcategories={subcategories}
+      currencies={currencies}
+      />
     )}
     {/* Metals Kategorisi seçilmiş ise */}
   </PageCardLayout>

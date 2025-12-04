@@ -51,6 +51,7 @@ const CurrencyComponent: React.FC<CurrencyProps> = ({selectedSubcategory, subcat
     // selectedBaseCurrency || selectedTargetCurrency || priceHistoryDays değiştiğinde tekrar istek gönder
     useEffect(() => {
       const fetchPriceHistory = async () => {
+        if(selectedSubcategory?.categoryId !== 1) return;
         if(!selectedBaseCurrency || !selectedTargetCurrency) return;
         if(selectedBaseCurrency.code === selectedTargetCurrency?.code) return;
         setLoading(true);

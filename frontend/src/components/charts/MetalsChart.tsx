@@ -1,21 +1,20 @@
-import type { Price } from "../../interfaces/Price";
 import { LineChart, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Line } from "recharts";
 import { useTheme } from "../../context/ThemeContext";
 import type { PriceMetal } from "../../interfaces/PriceMetal";
 import { useTranslation } from "react-i18next";
 
 interface Props {
-    data: Price[];
+    data: PriceMetal[];
 }
 
-export default function PriceChart({data}: Props){
+export default function MetalsChart({data}: Props){
     const { theme } = useTheme();
     const { t } = useTranslation();
     const strokeColor = theme === "dark" ? "#4ade80" : "#2563eb";
     const gridColor = theme === "dark" ? "#374151" : "#999";
     const textColor = theme === "dark" ? "#d1d5db" : "#111827";
 
-    const rates = data.map(d => d.rate);
+    const rates = data.map(d => d.gramMetal);
     const min = Math.min(...rates);
     const max = Math.max(...rates);
 
@@ -26,11 +25,11 @@ export default function PriceChart({data}: Props){
     return (
         <div className="w-full h-124">
             <ResponsiveContainer>
-                <LineChart margin={{top:30, bottom:20, left:20, right:20}} data={data}>
+                <LineChart margin={{ top: 20, bottom:20, left: 20, right: 20 }} data={data}>
                     <CartesianGrid
                         stroke={gridColor}
                         strokeDasharray="3 3"
-                    />
+                    />   
                     <XAxis
                         stroke={textColor}
                         dataKey="date"
@@ -52,12 +51,12 @@ export default function PriceChart({data}: Props){
                         tickMargin={10}
                         domain={[paddedMin, paddedMax]}
                         stroke={textColor}
-                        dataKey="rate"
+                        dataKey="gramMetal"
                         label={{
-                            value: t("chart.price"),
+                            value: t("chart.price")+" (Gram)",
                             angle: 0,
                             position: "top",     
-                            offset: 15
+                            offset: 5
                         }}
                     />
                     <Tooltip
@@ -72,7 +71,7 @@ export default function PriceChart({data}: Props){
                     />
                     <Line
                         type="monotone"
-                        dataKey="rate"
+                        dataKey="gramMetal"
                         stroke={strokeColor}
                         strokeWidth={2}
                         dot={true}

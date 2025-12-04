@@ -23,9 +23,9 @@
       "UAH": "Ukrayna Grivnası",
       "RUB": "Rus Rublesi",
       "TRY": "Türk Lirası",
-      "AU": "Altın",
-      "AG": "Gümüş",
-      "PT": "Platinyum",
+      "XAU": "Altın",
+      "XAG": "Gümüş",
+      "XPT": "Platinyum",
       "BTC": "Bitcoin",
       "ETH": "Ethereum",
       "XRP": "Ripple"
@@ -46,6 +46,10 @@
       "same": "Aynı"
     },
     "to": "Şuna Çevir",
+    "date": "Tarih"
+  },
+  "chart":{
+    "price": "Fiyat",
     "date": "Tarih"
   }
 }

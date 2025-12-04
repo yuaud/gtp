@@ -15,6 +15,7 @@ namespace backend.Controllers
             _exchangeRateService = exchangeRateService;
         }
 
+        // https://localhost:7095/api/Exchange/USD/TRY
         [HttpGet("{from}/{to}")]
         public async Task<IActionResult> GetRate(string from, string to)
         {
@@ -22,6 +23,16 @@ namespace backend.Controllers
             if(rate == null)
                 return NotFound();
             return Ok(new { from, to, rate });
+        }
+
+        // https://localhost:7095/api/Exchange/USD?to=TRY
+        [HttpGet("{from}")]
+        public async Task<IActionResult> GetLastRate(string from, [FromQuery] string to)
+        {
+            var lastrate = await _exchangeRateService.GetLastRate(from, to);
+            if (lastrate == null)
+                return NotFound();
+            return Ok(lastrate);
         }
     }
 }

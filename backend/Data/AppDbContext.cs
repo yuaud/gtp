@@ -9,6 +9,7 @@ namespace backend.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Subcategory> Subcategories { get; set; }
         public DbSet<Price> Prices { get; set; }
+        public DbSet<Price_Metal> Prices_Metal { get; set; }
         public DbSet<ScheduledTaskLog> ScheduledTaskLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,15 +34,15 @@ namespace backend.Data
 
             // --- 2. Subcategory Seed Data ---
             modelBuilder.Entity<Subcategory>().HasData(
-                new Subcategory { Id = 1, Name = "Turkish Lira", Code = "TL", Category_id = 1 },
+                new Subcategory { Id = 1, Name = "Turkish Lira", Code = "TRY", Category_id = 1 },
                 new Subcategory { Id = 2, Name = "Euro", Code = "EUR", Category_id = 1 },
                 new Subcategory { Id = 3, Name = "US Dollar", Code = "USD", Category_id = 1 },
                 new Subcategory { Id = 4, Name = "Ukrainian Hryvnia", Code = "UAH", Category_id = 1 },
                 new Subcategory { Id = 5, Name = "Russian Ruble", Code = "RUB", Category_id = 1 },
 
-                new Subcategory { Id = 6, Name = "Gold", Code = "AU", Category_id = 2 },
-                new Subcategory { Id = 7, Name = "Silver", Code = "AG", Category_id = 2 },
-                new Subcategory { Id = 8, Name = "Platinum", Code = "PT", Category_id = 2 },
+                new Subcategory { Id = 6, Name = "Gold", Code = "XAU", Category_id = 2 },
+                new Subcategory { Id = 7, Name = "Silver", Code = "XAG", Category_id = 2 },
+                new Subcategory { Id = 8, Name = "Platinum", Code = "XPT", Category_id = 2 },
 
                 new Subcategory { Id = 9, Name = "Bitcoin", Code = "BTC", Category_id = 3 },
                 new Subcategory { Id = 10, Name = "Etherium", Code = "ETH", Category_id = 3 },
